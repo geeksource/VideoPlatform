@@ -1,0 +1,26 @@
+﻿@using VideoPlatformPortal.ViewModels;
+@model List<SubscriptionPlanViewModel>
+
+@{
+    ViewData["Title"] = "Subscription Plans";
+}
+
+<h2>Choose a Subscription Plan</h2>
+
+<form asp-action="Subscribe" method="post">
+    <div class="row">
+        @foreach (var plan in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-header">@plan.Name</div>
+                    <div class="card-body">
+                        <p>Duration: @plan.DurationInDays days</p>
+                        <h5>$@plan.Price</h5>
+                        <button name="planId" value="@plan.Id" type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</form>

@@ -1,0 +1,2 @@
+﻿ .\stripe.exe login
+ .\stripe.exe listen --forward-to https://localhost:7156/api/StripeWebhook
